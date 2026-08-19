@@ -117,7 +117,7 @@ Command + Option + K
 Without using a keyboard shortcut:
 
 1. Right-click anywhere on the page.
-2. Click **Inspect** or **Inspect Accessibility Properties**, depending on the browser version.
+2. Click **Inspect**.
 3. Open the **Console** tab.
 
 You can also open Developer Tools from:
@@ -175,13 +175,13 @@ After starting the script:
 3. Close Developer Tools.
 4. Leave the X tab open.
 
-Do not refresh or close the X tab while the script is running.
+Do not refresh or close the X tab while you want the script to continue running.
 
-## Notes
+## Using Other Tabs While It Runs
 
 The X tab does not need to remain in the foreground.
 
-You can switch to another browser tab while the script continues running.
+You can switch to another browser tab and continue using your browser while the script runs.
 
 However:
 
@@ -190,15 +190,37 @@ However:
 * Do not navigate away from X Chat.
 * Background browser tabs may run JavaScript timers more slowly, so deletion may become slower.
 
-## Stopping the Script
+## Restarting After an Interruption
 
-The easiest way to stop the script is to refresh the X page:
+If the deletion process stops for **any reason**, you do not need to start over or change anything.
+
+Simply return to:
 
 ```text
-F5
+https://x.com/i/chat
 ```
 
-or close the X tab.
+and run the script again.
+
+The script will continue deleting the conversations that are still present.
+
+You can repeat this whenever necessary until all desired conversations have been deleted.
+
+## Stopping the Script
+
+If you want to stop the deletion process at any time, simply **close the X tab**.
+
+You can also stop it by refreshing the page.
+
+There is no separate stop command required.
+
+If you later want to continue, open:
+
+```text
+https://x.com/i/chat
+```
+
+and run the script again.
 
 ## Troubleshooting
 
@@ -213,6 +235,8 @@ Panel More button not found
 the X interface may not have finished loading the conversation information panel.
 
 The script already waits and retries several times, but X may occasionally load some conversations more slowly.
+
+If the script stops, simply run it again.
 
 ### Too Many Requests
 
@@ -232,13 +256,15 @@ Close Developer Tools after starting the script to avoid unnecessary Console noi
 
 The script stops after repeated consecutive failures to prevent an infinite loop.
 
-Refresh:
+If this happens, simply return to:
 
 ```text
 https://x.com/i/chat
 ```
 
 and run the script again.
+
+Previously deleted conversations will remain deleted, and the script will continue with the conversations that are still present.
 
 ## Warning
 
